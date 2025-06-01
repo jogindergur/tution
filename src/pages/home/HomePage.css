@@ -39,7 +39,7 @@
     min-width: 280px;
     /* Minimum width for the form */
     background-color: #fff;
-    padding: 20px;
+    padding: 0px 20px;
     /* Padding is inside the sidebar */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -75,3 +75,126 @@
         /* Add space when stacked */
     }
 }
+
+/* /Users/jogindersingh/Desktop/Projects/tution/tution/src/pages/home/HomePage.css */
+
+/* Container for the main content and sidebar */
+.homepage-container {
+    display: grid;
+    /*
+    Defines a two-column layout:
+    - The first column (main content) takes up roughly 2/3 of the space.
+      'minmax(0, 2fr)' allows it to shrink if needed and prevents overflow.
+    - The second column (sidebar) has a minimum width of 300px but can grow.
+      Adjust '300px' based on your sidebar's content.
+  */
+    grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+    gap: 2rem;
+    /* Consistent spacing between columns and rows (if stacked) */
+    padding: 2rem;
+    /* Padding around the entire content area */
+    max-width: 1200px;
+    /* Limits the width of the content for better readability on large screens */
+    margin: 0 auto;
+    /* Centers the container on the page */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* Space between sections like Hero, Courses, Faculty */
+}
+
+.sidebar-form {
+    /* Optional: Make the sidebar sticky on larger screens */
+    position: sticky;
+    /* Adjust 'top' based on your navbar's height + desired offset */
+    top: 100px;
+    align-self: start;
+    /* Crucial for sticky positioning within a CSS Grid cell */
+
+    /* Prevent the sticky sidebar from becoming taller than the viewport */
+    max-height: calc(100vh - 120px);
+    /* Adjust 120px (top offset + some breathing room) */
+    overflow-y: auto;
+    /* Allow scrolling within the sidebar if its content is too tall */
+
+    /* Optional: Add some visual distinction to the sidebar */
+    /* background-color: #f9f9f9; */
+    /* padding: 1.5rem; */
+    /* border-radius: 8px; */
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
+}
+
+/* Styles for the footer */
+.footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f8f9fa;
+    /* A light background for the footer */
+    margin-top: 3rem;
+    /* Space above the footer */
+    font-size: 0.9rem;
+    color: #6c757d;
+    /* A softer text color */
+    border-top: 1px solid #e9ecef;
+    /* A subtle top border */
+}
+
+/* --- Responsive Adjustments --- */
+
+/* For tablets and smaller desktops */
+@media (max-width: 992px) {
+    .homepage-container {
+        grid-template-columns: 1fr;
+        /* Stack main content and sidebar into a single column */
+        padding: 1.5rem;
+        /* Adjust padding for smaller screens */
+        gap: 1.5rem;
+    }
+
+    .sidebar-form {
+        position: static;
+        /* Reset sticky positioning */
+        max-height: none;
+        /* Allow sidebar to take its natural height */
+        overflow-y: visible;
+        /* Reset overflow */
+        margin-top: 2rem;
+        /* Add space above the sidebar when stacked */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .homepage-container {
+        padding: 1rem;
+        /* Further reduce padding for small screens */
+    }
+
+    .main-content {
+        gap: 1.5rem;
+        /* Adjust gap between sections */
+    }
+
+    .footer {
+        margin-top: 2rem;
+        padding: 1.5rem 1rem;
+    }
+}
+
+/*
+  Optional: Add some default styling to the direct children sections
+  within .main-content for a card-like or separated appearance.
+  This assumes HeroSection, CoursesOffered, FacultyInfo render a <section>
+  or <div> as their root element.
+*/
+/*
+.main-content > * {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+*/

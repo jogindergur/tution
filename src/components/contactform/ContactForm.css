@@ -1,7 +1,7 @@
 .contact-form-section {
     background-color: #ffffff;
     /* Keep white for contrast or use a very light gray */
-    padding: 25px;
+    padding: 0px 25px 25px;
     border-radius: 8px;
     /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); Remove if already on sidebar-form */
 }

@@ -38,9 +38,8 @@ const HomePage = () => {
     return (
         <div>
             <NavigationBar instituteName={instituteDetails.name} />
-            {/* Ensure this is the structure: homepage-container wraps main-content and sidebar-form as direct children */}
             <div className="homepage-container">
-                <div className="main-content"> {/* Flex Item 1 */}
+                <main className="main-content"> {/* Flex Item 1, now a <main> element */}
                     <HeroSection
                         name={instituteDetails.name}
                         iso={instituteDetails.iso}
@@ -52,7 +51,7 @@ const HomePage = () => {
                         certificationCourses={instituteDetails.certificationCourses}
                     />
                     <FacultyInfo faculty={instituteDetails.faculty} />
-                </div>
+                </main>
                 <aside className="sidebar-form"> {/* Flex Item 2 */}
                     <ContactForm courses={allCoursesForForm} />
                 </aside>
