@@ -1,3 +1,4 @@
+// src/pages/HomePage.js
 import ContactForm from '../../components/contactform/ContactForm';
 import CoursesOffered from '../../components/coursesoffered/CoursesOffered';
 import FacultyInfo from '../../components/facultyinfo/FacultyInfo';
@@ -37,8 +38,9 @@ const HomePage = () => {
     return (
         <div>
             <NavigationBar instituteName={instituteDetails.name} />
+            {/* Ensure this is the structure: homepage-container wraps main-content and sidebar-form as direct children */}
             <div className="homepage-container">
-                <div className="main-content">
+                <div className="main-content"> {/* Flex Item 1 */}
                     <HeroSection
                         name={instituteDetails.name}
                         iso={instituteDetails.iso}
@@ -51,7 +53,7 @@ const HomePage = () => {
                     />
                     <FacultyInfo faculty={instituteDetails.faculty} />
                 </div>
-                <aside className="sidebar-form">
+                <aside className="sidebar-form"> {/* Flex Item 2 */}
                     <ContactForm courses={allCoursesForForm} />
                 </aside>
             </div>
