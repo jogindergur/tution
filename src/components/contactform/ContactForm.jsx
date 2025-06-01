@@ -105,7 +105,7 @@ const ContactForm = ({ courses }) => {
                     <textarea
                         id="message"
                         name="message"
-                        rows="4"
+                        rows="3"
                         value={formData.message}
                         onChange={handleChange}
                         className={errors.message ? 'error-input' : ''}
