@@ -31,13 +31,13 @@
 .sidebar-form {
     /* Optional: Make the sidebar sticky on larger screens */
     position: sticky;
-    /* Adjust 'top' based on your navbar's height + desired offset */
-    top: 100px;
+    /* Adjust 'top' based on your navbar's height + desired offset.
+       Approx. 70px for navbar height + 1rem (16px) offset = ~86px */
+    top: calc(4.5rem); /* Roughly 72px, adjust as needed based on final navbar height */
     align-self: start;
     /* Crucial for sticky positioning within a CSS Grid cell */
-
     /* Max height allows sidebar to use viewport height minus top offset and a 1rem bottom margin */
-    max-height: calc(100vh - 100px - 1rem); /* Assuming top is 100px, leaves 1rem at the bottom */
+    max-height: calc(100vh - 4.5rem - 1rem); /* top offset + 1rem bottom breathing room */
     overflow-y: auto;
     /* Allow scrolling within the sidebar if its content is too tall */
 
