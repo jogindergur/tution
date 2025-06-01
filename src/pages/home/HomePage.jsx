@@ -1,8 +1,8 @@
-import ContactForm from '../components/ContactForm';
-import CoursesOffered from '../components/CoursesOffered';
-import FacultyInfo from '../components/FacultyInfo';
-import HeroSection from '../components/HeroSection';
-import NavigationBar from '../components/NavigationBar';
+import ContactForm from '../../components/contactform/ContactForm';
+import CoursesOffered from '../../components/coursesoffered/CoursesOffered';
+import FacultyInfo from '../../components/facultyinfo/FacultyInfo';
+import HeroSection from '../../components/herosection/HeroSection';
+import NavigationBar from '../../components/navigationbar/NavigationBar';
 import './HomePage.css';
 
 const HomePage = () => {
